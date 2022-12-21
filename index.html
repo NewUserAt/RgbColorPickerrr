@@ -1,0 +1,65 @@
+<!Doctype html>
+<html>
+<head>
+<title>Color Picker</title>
+<link rel="icon" href="E:\JavaScript Project\WhatsApp_Image_2022-10-15_at_17.39.16-removebg-preview.png" type="image/icon type">
+<style>
+body{
+
+  background-image: url('wallpaperflare.com_wallpaper.gif');
+
+}
+h1{
+position:relative;
+top: 400px;
+left:300px;
+color: white;
+font-family: Georgia, serif;
+}
+ 
+.btn{
+background-color: pink;
+position: relative;
+transition: .4s ease-in;
+z-index:1;
+padding-right:50px;
+padding-left:50px;
+padding-top:20px;
+padding-bottom:20px;
+left:200px;
+top:50px;
+color:white;
+font-family: Georgia, serif;
+text-decoration: bold;
+font-size:20px;
+border-radius:20px;
+
+}
+btn:before,
+btn:after{
+position: absolute;
+content:"";
+z-index:-1;
+}
+.btn:hover{
+border: 2px solid #ff96ad;
+background-color: #17181c;
+}
+
+</style>
+
+</head>
+<body>
+
+ 
+ <h1>"JANHAVI SOLANKI WELCOMES YOU"</h1>
+
+ <button class="btn" onclick= "window.open('index.html', '_blank')">Home</button>
+ <button class="btn" onclick= "window.open ('about.html', '_blank')" >About Us</button>
+ <button class="btn" onclick= "window.open ('rgb_value.html', '_blank')">RGB Value Coverter</button>
+ <button class="btn" onclick= "window.open  ('rgb.html', '_blank')">RGB TO HEX Coverter</button>
+ <button class="btn" onclick= "window.open  ('hex.html', '_blank')">HEX TO RGB Coverter</button> 
+ 
+
+</body>
+</html>

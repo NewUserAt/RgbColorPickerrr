@@ -1,0 +1,132 @@
+<! Doctype html>
+<html>
+<head>
+<title>Hex To RGB</title>
+<style>
+body{
+background-color: #1a1a1d;
+}
+.form-group{
+text-align:center;
+	color: #950740;
+	font-size:x-large;
+	text-decoration:bold;
+	font-family: Georgia, serif;
+	padding-top:10px;
+	padding-left:100px;
+	padding-right:100px;
+	padding-bottom:30px;
+	
+
+}
+.box{
+   background-color:pink;
+   width:200px;
+   height:40px;
+   text-align:center;
+  padding-top:10px;
+	
+
+  
+}
+.btn{
+background-color: #6f2232; 
+border-radius:20px;
+ box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+ padding:10px;
+ width:200px;
+ position: absolute;
+ right: 600px;
+ 
+	text-align:center;
+}
+	.btn:hover{
+	background-color:#c3073f;
+	transition:0.7s:
+	}
+
+</style>
+  <link rel="icon" href="E:\JavaScript Project\WhatsApp_Image_2022-10-15_at_17.39.16-removebg-preview.png" type="image/icon type">
+</head>
+<body>
+   
+	
+
+<form id="mainForm" name="mainForm" autocomplete="off">
+   <div class="form-group">
+      <label for="hex">Hex color code (#RRGGBB)</label>
+      <input type="text" id="hex" name="hex" placeholder="000000" minlength="3" maxlength="8" class="box" autofocus>
+   </div>
+   <div class="form-group">
+      <button type="button" title="Convert" class="btn" onclick="calc()"> Convert</button>
+   </div>
+   <div class="form-group">
+      <label for="r">Red color (R)</label>
+      <input type="text" id="r" name="r" class="box" >
+   </div>
+   <div class="form-group">
+      <label for="g">Green color (G)</label>
+      <input type="text" id="g" name="g" class="box" >
+   </div>
+   <div class="form-group">
+      <label for="b">Blue color (B)</label>
+      <input type="text" id="b" name="b" class="box" >
+   </div>
+   <div class="form-group">
+      <label for="css">CSS color</label>
+      <input type="text" id="css" name="css" class="box" >
+   </div>
+   <div class="form-group">
+      <label for="color">Color preview</label>
+      <input type="text" id="color" name="color" class="form-control" style="height:70px; border:1px solid black" readonly>
+   </div>
+</form>
+
+<script>
+function calc() 
+		{
+         var r,g,b,a="";
+			var hex = document.mainForm.hex.value;
+			if( hex=="" ) hex="000000";
+			if( hex.charAt(0)=="#" ) hex=hex.substring(1,hex.length);
+			if( hex.length!=6 && hex.length!=8 && hex.length!=3 )
+			{
+				alert("Please enter 6 digits color code !");
+				return;
+			}
+			if( hex.length==3 )
+			{
+				r = hex.substring(0,1);
+				g = hex.substring(1,2);
+				b = hex.substring(2,3);
+				r=r+r;
+				g=g+g;
+				b=b+b;
+			}
+			else
+			{
+				r = hex.substring(0,2);
+				g = hex.substring(2,4);
+				b = hex.substring(4,6);
+			}
+			if( hex.length==8 )
+			{
+            a = hex.substring(6,8);
+            a = (parseInt(a, 16)/255.0).toFixed(2);
+         }
+			r = parseInt(r, 16);
+			g = parseInt(g, 16);
+			b = parseInt(b, 16);
+         var css="rgb("+r+", "+g+", "+b+")";
+			if( hex.length==8 )
+            css="rgba("+r+", "+g+", "+b+", "+a+")";
+
+			document.mainForm.r.value = r;
+			document.mainForm.g.value = g;
+			document.mainForm.b.value = b;
+			document.mainForm.css.value = css;
+		 	document.mainForm.color.style.backgroundColor='#'+hex;
+		}
+</script>
+</body>
+</html>
